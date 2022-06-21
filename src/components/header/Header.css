@@ -1,0 +1,156 @@
+header {
+  height: 120vh;
+  padding-top: 7rem;
+  overflow: hidden;
+}
+
+.header_container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+/* =============== CTA ============== */
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* =============== HEADER SOCIALS ============== */
+
+.header_socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+}
+
+.header_socials::after {
+  content: "";
+  width: 1px;
+  height: 2em;
+  background-color: var(--color-primary);
+}
+
+/* =============== ME ============== */
+
+/* .me {
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  left: calc(50% - 11rem);
+  margin-top: 4rem;
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+} */
+
+/* ====================== ANIMATE =============== */
+.stage_cube_cont {
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  left: calc(50% - 11rem);
+  margin-top: 10rem;
+}
+
+.cubespinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0;
+  margin-left: calc(50% - 100px);
+}
+
+.cubespinner div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.4);
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 0px lightyellow;
+}
+
+@keyframes spincube {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: rotateY(90deg);
+  }
+  33% {
+    transform: rotateY(-90deg) rotateZ(90deg);
+  }
+  50% {
+    transform: rotateY(-180deg) rotateZ(90deg);
+  }
+  66% {
+    transform: rotateY(-270deg) rotateZ(90deg);
+  }
+  83% {
+    transform: rotateX(90deg);
+  }
+}
+
+.face1 {
+  transform: translateZ(100px);
+}
+.face2 {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.face3 {
+  transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+}
+.face4 {
+  transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+}
+.face5 {
+  transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+}
+.face6 {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* =============== SCROLL DOWN ============== */
+
+.scroll_down {
+  position: absolute;
+  right: -2.3rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* ============= MEDIA QUERIES (MEDIUM DEVICES) ================ */
+
+@media screen and (max-width: 1024px) {
+  header {
+    height: 110vh;
+  }
+}
+
+/* ============= MEDIA QUERIES (SMALL DEVICES) ================ */
+
+@media screen and (max-width: 600px) {
+  header {
+    height: 110vh;
+  }
+  .header_socials,
+  .scroll_down {
+    display: none;
+  }
+}
